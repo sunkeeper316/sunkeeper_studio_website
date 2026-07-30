@@ -15,9 +15,23 @@ const messages = {
   }
 };
 
+const getBrowserLanguage = () => {
+  const lang = navigator.language || navigator.userLanguage;
+  if (!lang) return 'zh-TW';
+  
+  const lowerLang = lang.toLowerCase();
+  if (lowerLang.includes('zh-cn') || lowerLang.includes('zh-hans')) {
+    return 'zh-CN';
+  }
+  if (lowerLang.includes('zh')) {
+    return 'zh-TW';
+  }
+  return 'en';
+};
+
 const i18n = createI18n({
   legacy: false, // use Composition API
-  locale: 'zh-TW', // default locale
+  locale: getBrowserLanguage(), // auto detect locale
   fallbackLocale: 'en',
   messages
 });

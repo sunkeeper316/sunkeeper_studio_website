@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -179,4 +179,44 @@ p {
 .lang-switcher .divider {
   color: var(--glass-border);
   font-size: 0.9rem;
+}
+
+/* RWD for Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 2rem 1.25rem;
+  }
+  
+  .logo-icon {
+    width: 260px;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  
+  .contact-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .lang-switcher {
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+  }
+  
+  .lang-switcher button {
+    font-size: 0.85rem;
+  }
 }
