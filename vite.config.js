@@ -8,4 +8,7 @@ export default defineConfig({
   // 如果您的 Repo 名稱是 sunkeeper_studio_website，就保留這樣。
   // 如果是其他的，請改成 '/您的Repo名稱/'
   base: '/sunkeeper_studio_website/',
+  server: {
+    host: true, // 允許區網內的其他設備連線（如手機）
+  }
 })
