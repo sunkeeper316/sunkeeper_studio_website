@@ -17,6 +17,7 @@ const superBanqiAppStoreLink = 'https://apps.apple.com/us/app/%E8%B6%85%E7%B4%9A
 const superBanqiGooglePlayLink = 'https://play.google.com/store/apps/details?id=studio.sunkeeper.happydarkchess';
 const thunderForceAppStoreLink = 'https://apps.apple.com/us/app/thunderforce/id6802530155';
 const thunderForceGooglePlayLink = 'https://play.google.com/store/apps/details?id=studio.sunkeeper.thunderbolt_robot';
+const isWebView = new URLSearchParams(window.location.search).get('view') === 'web';
 
 const changeLang = (lang) => {
   locale.value = lang;
@@ -119,7 +120,13 @@ const changeLang = (lang) => {
         </article>
       </section>
       
-      <div class="contact-links">
+      <section
+        class="contact-section"
+        :class="{ 'contact-section-priority': !isWebView }"
+        aria-labelledby="contact-title"
+      >
+        <h2 id="contact-title" class="section-title">{{ $t('contact_title') }}</h2>
+        <div class="contact-links">
         <a :href="mailtoLink" class="contact-btn">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -165,7 +172,8 @@ const changeLang = (lang) => {
           </svg>
           Discord
         </a>
-      </div>
+        </div>
+      </section>
       
     </div>
   </div>

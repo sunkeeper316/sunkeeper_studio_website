@@ -6,6 +6,7 @@ const messages = {
     tools_title: 'Tools',
     download_app: 'Download the app',
     games_title: 'Games',
+    contact_title: 'Contact & Support',
     super_banqi_name: 'SuperBanqi',
     download_game: 'Download the game',
     more_coming: 'More links coming soon...'
@@ -15,6 +16,7 @@ const messages = {
     tools_title: '小工具',
     download_app: '立即下載',
     games_title: '小遊戲',
+    contact_title: '聯絡與支援',
     super_banqi_name: '超級暗棋',
     download_game: '立即下載',
     more_coming: '更多連結即將推出...'
@@ -24,6 +26,7 @@ const messages = {
     tools_title: '小工具',
     download_app: '立即下载',
     games_title: '小游戏',
+    contact_title: '联系与支持',
     super_banqi_name: '超级暗棋',
     download_game: '立即下载',
     more_coming: '更多链接即将推出...'

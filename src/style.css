@@ -200,11 +200,27 @@ p {
   flex: 0 0 auto;
 }
 
-.contact-links {
+.contact-section {
+  order: 6;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+}
+
+.contact-section-priority {
   order: 3;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.contact-links {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .contact-btn {
