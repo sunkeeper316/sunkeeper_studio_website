@@ -13,6 +13,10 @@ const picClipAppStoreLink = 'https://apps.apple.com/app/id6793762269';
 const picClipGooglePlayLink = 'https://play.google.com/store/apps/details?id=com.sun.photo_clip';
 const picGridsAppStoreLink = 'https://apps.apple.com/app/id6799643223';
 const picGridsGooglePlayLink = 'https://play.google.com/store/apps/details?id=com.sun.pic_grid';
+const superBanqiAppStoreLink = 'https://apps.apple.com/us/app/%E8%B6%85%E7%B4%9A%E6%9A%97%E6%A3%8B/id6805352882';
+const superBanqiGooglePlayLink = 'https://play.google.com/store/apps/details?id=studio.sunkeeper.happydarkchess';
+const thunderForceAppStoreLink = 'https://apps.apple.com/us/app/thunderforce/id6802530155';
+const thunderForceGooglePlayLink = 'https://play.google.com/store/apps/details?id=studio.sunkeeper.thunderbolt_robot';
 
 const changeLang = (lang) => {
   locale.value = lang;
@@ -69,6 +73,45 @@ const changeLang = (lang) => {
               App Store
             </a>
             <a :href="picGridsGooglePlayLink" class="store-btn" target="_blank" rel="noopener noreferrer" aria-label="PicGrids on Google Play（在新分頁開啟）">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 2.14a1.8 1.8 0 0 0-.68 1.42v16.88c0 .56.25 1.06.66 1.39l9.49-9.85-9.47-9.84Zm10.7 8.57 2.42-2.51L5.79 2.35l8.09 8.36Zm3.92-1.67-2.69 2.79 2.71 2.8 3.27-1.82c1.21-.67 1.21-1.77 0-2.45L17.8 9.04ZM5.76 21.67l10.56-5.87-2.44-2.52-8.12 8.39Z" /></svg>
+              Google Play
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <section class="app-download game-download" aria-labelledby="games-title">
+        <h2 id="games-title" class="section-title">{{ $t('games_title') }}</h2>
+        <article class="app-item">
+          <img src="/superbanqi.png" :alt="`${$t('super_banqi_name')} App icon`" class="app-icon" />
+          <div class="app-info">
+            <h2>{{ $t('super_banqi_name') }}</h2>
+            <span>{{ $t('download_game') }}</span>
+          </div>
+          <div class="store-links">
+            <a :href="superBanqiAppStoreLink" class="store-btn" target="_blank" rel="noopener noreferrer" aria-label="超級暗棋 on the App Store（在新分頁開啟）">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.32.03-1.75-.79-3.27-.79-1.53 0-2 .77-3.25.82-1.3.05-2.29-1.32-3.13-2.54C4.31 17 3 12.5 4.79 9.39a4.86 4.86 0 0 1 4.14-2.5c1.29-.03 2.51.87 3.27.87.75 0 2.17-1.08 3.66-.92a4.71 4.71 0 0 1 3.7 2.01 4.6 4.6 0 0 0-2.18 3.83 4.48 4.48 0 0 0 2.7 4.1 11.05 11.05 0 0 1-1.37 2.72ZM13.08 3.21A4.4 4.4 0 0 1 15.93 1a4.22 4.22 0 0 1-1 3.09 3.69 3.69 0 0 1-2.92 1.4 4.18 4.18 0 0 1 1.07-2.28Z" /></svg>
+              App Store
+            </a>
+            <a :href="superBanqiGooglePlayLink" class="store-btn" target="_blank" rel="noopener noreferrer" aria-label="超級暗棋 on Google Play（在新分頁開啟）">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 2.14a1.8 1.8 0 0 0-.68 1.42v16.88c0 .56.25 1.06.66 1.39l9.49-9.85-9.47-9.84Zm10.7 8.57 2.42-2.51L5.79 2.35l8.09 8.36Zm3.92-1.67-2.69 2.79 2.71 2.8 3.27-1.82c1.21-.67 1.21-1.77 0-2.45L17.8 9.04ZM5.76 21.67l10.56-5.87-2.44-2.52-8.12 8.39Z" /></svg>
+              Google Play
+            </a>
+          </div>
+        </article>
+
+        <article class="app-item">
+          <img src="/thunderforce.png" alt="ThunderForce App icon" class="app-icon" />
+          <div class="app-info">
+            <h2>ThunderForce</h2>
+            <span>{{ $t('download_game') }}</span>
+          </div>
+          <div class="store-links">
+            <a :href="thunderForceAppStoreLink" class="store-btn" target="_blank" rel="noopener noreferrer" aria-label="ThunderForce on the App Store（在新分頁開啟）">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.32.03-1.75-.79-3.27-.79-1.53 0-2 .77-3.25.82-1.3.05-2.29-1.32-3.13-2.54C4.31 17 3 12.5 4.79 9.39a4.86 4.86 0 0 1 4.14-2.5c1.29-.03 2.51.87 3.27.87.75 0 2.17-1.08 3.66-.92a4.71 4.71 0 0 1 3.7 2.01 4.6 4.6 0 0 0-2.18 3.83 4.48 4.48 0 0 0 2.7 4.1 11.05 11.05 0 0 1-1.37 2.72ZM13.08 3.21A4.4 4.4 0 0 1 15.93 1a4.22 4.22 0 0 1-1 3.09 3.69 3.69 0 0 1-2.92 1.4 4.18 4.18 0 0 1 1.07-2.28Z" /></svg>
+              App Store
+            </a>
+            <a :href="thunderForceGooglePlayLink" class="store-btn" target="_blank" rel="noopener noreferrer" aria-label="ThunderForce on Google Play（在新分頁開啟）">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 2.14a1.8 1.8 0 0 0-.68 1.42v16.88c0 .56.25 1.06.66 1.39l9.49-9.85-9.47-9.84Zm10.7 8.57 2.42-2.51L5.79 2.35l8.09 8.36Zm3.92-1.67-2.69 2.79 2.71 2.8 3.27-1.82c1.21-.67 1.21-1.77 0-2.45L17.8 9.04ZM5.76 21.67l10.56-5.87-2.44-2.52-8.12 8.39Z" /></svg>
               Google Play
             </a>

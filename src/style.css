@@ -126,6 +126,10 @@ p {
   border-radius: 18px;
 }
 
+.game-download {
+  order: 5;
+}
+
 .section-title {
   margin-bottom: 0.15rem;
   color: var(--text-primary);
