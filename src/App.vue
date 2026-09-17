@@ -33,14 +33,15 @@ const changeLang = (lang) => {
     <button :class="{ active: locale === 'en' }" @click="changeLang('en')">EN</button>
   </div>
 
-  <div class="container">
+  <div class="container" :class="{ 'web-layout': isWebView }">
     <div class="card">
       <div class="logo-container">
         <!-- 這裡會讀取 public/sunkeeper_studio_logo.svg 檔案 -->
         <img src="/sunkeeper_studio_logo.svg" alt="Sunkeeper Studio Logo" class="logo-icon" />
       </div>
-      
-      <p>{{ $t('description') }}</p>
+
+      <p class="brand-tagline">{{ $t('brand_tagline') }}</p>
+      <p class="brand-description">{{ $t('description') }}</p>
 
       <section class="app-download" aria-labelledby="tools-title">
         <h2 id="tools-title" class="section-title">{{ $t('tools_title') }}</h2>
@@ -50,6 +51,7 @@ const changeLang = (lang) => {
             <h2>PicClip</h2>
             <span>{{ $t('download_app') }}</span>
           </div>
+          <div v-if="isWebView" class="app-description">{{ $t('picclip_description') }}</div>
           <div class="store-links">
             <a :href="picClipAppStoreLink" class="store-btn" target="_blank" rel="noopener noreferrer" aria-label="PicClip on the App Store（在新分頁開啟）">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.32.03-1.75-.79-3.27-.79-1.53 0-2 .77-3.25.82-1.3.05-2.29-1.32-3.13-2.54C4.31 17 3 12.5 4.79 9.39a4.86 4.86 0 0 1 4.14-2.5c1.29-.03 2.51.87 3.27.87.75 0 2.17-1.08 3.66-.92a4.71 4.71 0 0 1 3.7 2.01 4.6 4.6 0 0 0-2.18 3.83 4.48 4.48 0 0 0 2.7 4.1 11.05 11.05 0 0 1-1.37 2.72ZM13.08 3.21A4.4 4.4 0 0 1 15.93 1a4.22 4.22 0 0 1-1 3.09 3.69 3.69 0 0 1-2.92 1.4 4.18 4.18 0 0 1 1.07-2.28Z" /></svg>
@@ -68,6 +70,7 @@ const changeLang = (lang) => {
             <h2>PicGrids</h2>
             <span>{{ $t('download_app') }}</span>
           </div>
+          <div v-if="isWebView" class="app-description">{{ $t('picgrids_description') }}</div>
           <div class="store-links">
             <a :href="picGridsAppStoreLink" class="store-btn" target="_blank" rel="noopener noreferrer" aria-label="PicGrids on the App Store（在新分頁開啟）">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.32.03-1.75-.79-3.27-.79-1.53 0-2 .77-3.25.82-1.3.05-2.29-1.32-3.13-2.54C4.31 17 3 12.5 4.79 9.39a4.86 4.86 0 0 1 4.14-2.5c1.29-.03 2.51.87 3.27.87.75 0 2.17-1.08 3.66-.92a4.71 4.71 0 0 1 3.7 2.01 4.6 4.6 0 0 0-2.18 3.83 4.48 4.48 0 0 0 2.7 4.1 11.05 11.05 0 0 1-1.37 2.72ZM13.08 3.21A4.4 4.4 0 0 1 15.93 1a4.22 4.22 0 0 1-1 3.09 3.69 3.69 0 0 1-2.92 1.4 4.18 4.18 0 0 1 1.07-2.28Z" /></svg>
@@ -89,6 +92,7 @@ const changeLang = (lang) => {
             <h2>{{ $t('super_banqi_name') }}</h2>
             <span>{{ $t('download_game') }}</span>
           </div>
+          <div v-if="isWebView" class="app-description">{{ $t('super_banqi_description') }}</div>
           <div class="store-links">
             <a :href="superBanqiAppStoreLink" class="store-btn" target="_blank" rel="noopener noreferrer" aria-label="超級暗棋 on the App Store（在新分頁開啟）">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.32.03-1.75-.79-3.27-.79-1.53 0-2 .77-3.25.82-1.3.05-2.29-1.32-3.13-2.54C4.31 17 3 12.5 4.79 9.39a4.86 4.86 0 0 1 4.14-2.5c1.29-.03 2.51.87 3.27.87.75 0 2.17-1.08 3.66-.92a4.71 4.71 0 0 1 3.7 2.01 4.6 4.6 0 0 0-2.18 3.83 4.48 4.48 0 0 0 2.7 4.1 11.05 11.05 0 0 1-1.37 2.72ZM13.08 3.21A4.4 4.4 0 0 1 15.93 1a4.22 4.22 0 0 1-1 3.09 3.69 3.69 0 0 1-2.92 1.4 4.18 4.18 0 0 1 1.07-2.28Z" /></svg>
@@ -107,6 +111,7 @@ const changeLang = (lang) => {
             <h2>ThunderForce</h2>
             <span>{{ $t('download_game') }}</span>
           </div>
+          <div v-if="isWebView" class="app-description">{{ $t('thunderforce_description') }}</div>
           <div class="store-links">
             <a :href="thunderForceAppStoreLink" class="store-btn" target="_blank" rel="noopener noreferrer" aria-label="ThunderForce on the App Store（在新分頁開啟）">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.32.03-1.75-.79-3.27-.79-1.53 0-2 .77-3.25.82-1.3.05-2.29-1.32-3.13-2.54C4.31 17 3 12.5 4.79 9.39a4.86 4.86 0 0 1 4.14-2.5c1.29-.03 2.51.87 3.27.87.75 0 2.17-1.08 3.66-.92a4.71 4.71 0 0 1 3.7 2.01 4.6 4.6 0 0 0-2.18 3.83 4.48 4.48 0 0 0 2.7 4.1 11.05 11.05 0 0 1-1.37 2.72ZM13.08 3.21A4.4 4.4 0 0 1 15.93 1a4.22 4.22 0 0 1-1 3.09 3.69 3.69 0 0 1-2.92 1.4 4.18 4.18 0 0 1 1.07-2.28Z" /></svg>
@@ -127,11 +132,11 @@ const changeLang = (lang) => {
       >
         <h2 id="contact-title" class="section-title">{{ $t('contact_title') }}</h2>
         <div class="contact-links">
-        <a :href="mailtoLink" class="contact-btn">
+        <a :href="mailtoLink" class="contact-btn" :aria-label="`Email: ${emailAddress}`">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          {{ emailAddress }}
+          Email
         </a>
 
         <a

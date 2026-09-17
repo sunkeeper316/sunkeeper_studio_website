@@ -113,6 +113,18 @@ p {
   margin-bottom: 2.5rem;
 }
 
+.brand-tagline {
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.brand-description {
+  margin-bottom: 2.5rem;
+}
+
 .app-download {
   order: 4;
   display: flex;
@@ -164,6 +176,13 @@ p {
 .app-info span {
   color: var(--text-secondary);
   font-size: 0.875rem;
+}
+
+.app-description {
+  grid-column: 1 / -1;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
 .store-links {
@@ -320,6 +339,57 @@ p {
 .lang-switcher .divider {
   color: var(--glass-border);
   font-size: 0.9rem;
+}
+
+/* Wider, responsive presentation for links opened with ?view=web */
+@media (min-width: 769px) {
+  .container.web-layout {
+    max-width: 1080px;
+    padding: 3rem;
+  }
+
+  .web-layout .card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    padding: 3.5rem;
+  }
+
+  .web-layout .logo-container,
+  .web-layout .card > p,
+  .web-layout .contact-section {
+    grid-column: 1 / -1;
+  }
+
+  .web-layout .logo-container {
+    width: 100%;
+  }
+
+  .web-layout .logo-icon {
+    width: 420px;
+  }
+
+  .web-layout .card > p {
+    max-width: 720px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .web-layout .brand-tagline {
+    max-width: 780px;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+  }
+
+  .web-layout .app-download {
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .web-layout .contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* RWD for Mobile */
