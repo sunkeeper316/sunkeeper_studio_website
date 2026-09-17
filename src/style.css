@@ -109,11 +109,17 @@ p {
   margin-bottom: 2.5rem;
 }
 
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .contact-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  position: relative;
   background: var(--primary);
   color: white;
   text-decoration: none;
@@ -130,7 +136,33 @@ p {
   transform: scale(1.02);
 }
 
+.facebook-btn {
+  background: #1877f2;
+}
+
+.facebook-btn:hover {
+  background: #0c63d4;
+}
+
+.instagram-btn {
+  background: linear-gradient(135deg, #833ab4, #e1306c, #f77737);
+}
+
+.instagram-btn:hover {
+  background: linear-gradient(135deg, #6d2e99, #c92560, #df652a);
+}
+
+.discord-btn {
+  background: #5865f2;
+}
+
+.discord-btn:hover {
+  background: #4752c4;
+}
+
 .contact-btn svg {
+  position: absolute;
+  left: 1.25rem;
   width: 20px;
   height: 20px;
 }
@@ -208,6 +240,7 @@ p {
   }
   
   .contact-btn svg {
+    left: 1rem;
     width: 18px;
     height: 18px;
   }
