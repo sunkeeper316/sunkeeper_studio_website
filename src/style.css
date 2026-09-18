@@ -342,17 +342,17 @@ p {
 }
 
 /* Wider, responsive presentation for links opened with ?view=web */
-@media (min-width: 769px) {
+@media (min-width: 600px) {
   .container.web-layout {
     max-width: 1080px;
-    padding: 3rem;
+    padding: 1.5rem;
   }
 
   .web-layout .card {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 1.5rem;
-    padding: 3.5rem;
+    column-gap: 1rem;
+    padding: 2rem;
   }
 
   .web-layout .logo-container,
@@ -367,6 +367,7 @@ p {
 
   .web-layout .logo-icon {
     width: 420px;
+    max-width: 100%;
   }
 
   .web-layout .card > p {
@@ -389,6 +390,17 @@ p {
   .web-layout .contact-links {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 769px) {
+  .container.web-layout {
+    padding: 3rem;
+  }
+
+  .web-layout .card {
+    column-gap: 1.5rem;
+    padding: 3.5rem;
   }
 }
 

@@ -1,4 +1,5 @@
 <script setup>
+import { onBeforeUnmount, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { locale } = useI18n();
@@ -17,7 +18,16 @@ const superBanqiAppStoreLink = 'https://apps.apple.com/us/app/%E8%B6%85%E7%B4%9A
 const superBanqiGooglePlayLink = 'https://play.google.com/store/apps/details?id=studio.sunkeeper.happydarkchess';
 const thunderForceAppStoreLink = 'https://apps.apple.com/us/app/thunderforce/id6802530155';
 const thunderForceGooglePlayLink = 'https://play.google.com/store/apps/details?id=studio.sunkeeper.thunderbolt_robot';
-const isWebView = new URLSearchParams(window.location.search).get('view') === 'web';
+const webLayoutMediaQuery = window.matchMedia('(min-width: 600px)');
+const forceWebView = new URLSearchParams(window.location.search).get('view') === 'web';
+const isWebView = ref(forceWebView || webLayoutMediaQuery.matches);
+
+const updateWebView = (event) => {
+  isWebView.value = forceWebView || event.matches;
+};
+
+webLayoutMediaQuery.addEventListener('change', updateWebView);
+onBeforeUnmount(() => webLayoutMediaQuery.removeEventListener('change', updateWebView));
 
 const changeLang = (lang) => {
   locale.value = lang;
